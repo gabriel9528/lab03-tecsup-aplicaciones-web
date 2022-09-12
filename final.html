@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Casa de cambios</title>
+    <script>
+      function montoCotizar() {
+       var monto = parseInt(document.getElementById("monto").value);
+       var opciones = document.getElementsByName("opciones")
+       for(let i =0; i<opciones.length; i++) {
+           if(opciones[i].checked == "dolar") {
+               montoDolar = monto*3.80;
+               alert(montoDolar)
+           } else {
+               montoEuro = monto*4.10;
+               alert(montoEuro)
+           }
+       }
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Casa de cambio</h1>
+    <form>
+      <input
+        type="radio"
+        name="opciones"
+        value="euro"
+      />euro<br />
+      <input
+        type="radio"
+        name="opciones"
+        value="dolar"
+      />dolar<br />
+      <input type="text" id="monto" />
+      <button type="button" onclick="montoCotizar()">cotizar</button>
+    </form>
+  </body>
+</html>
